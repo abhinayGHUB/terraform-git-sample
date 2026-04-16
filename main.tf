@@ -57,3 +57,13 @@ resource "aws_dynamodb_table" "terraform_lock" {
     type = "S"
   }
 }
+
+# create an ec2 instance
+resource "aws_instance" "example" {
+  ami           = "ami-07062e2a343acc423"
+  instance_type = "t2.nano"
+
+  tags = {
+    Name = "RemoteBackendCreated"
+  }
+}
