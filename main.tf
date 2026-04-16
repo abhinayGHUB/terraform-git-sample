@@ -62,7 +62,7 @@ resource "aws_dynamodb_table" "terraform_lock" {
 resource "aws_instance" "example" {
   ami           = "ami-07062e2a343acc423"
   instance_type = "t2.nano"
-
+  region        = "us-east-2"
   tags = {
     Name = "RemoteBackendCreated"
   }
